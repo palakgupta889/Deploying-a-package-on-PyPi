@@ -1,6 +1,6 @@
 # numerical_distributions package
 
-A python package having classes for Gaussain and Binomial distributions. This is my first package to learn how to make packages and upload them to PyPi.
+A python package having classes for Gaussian and Binomial distributions. This is my first package to learn how to make packages and upload them to PyPi.
 
 # Files
 

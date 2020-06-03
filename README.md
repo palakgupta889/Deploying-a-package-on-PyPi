@@ -1,6 +1,6 @@
-## How to put code on PyPi
+# How to upload code on PyPi
 
-# Setting up and installing the requirements
+## Setting up and installing the requirements
 ```
 python3 setup.py sdist bdist_wheel
 pip install twine
@@ -11,14 +11,20 @@ The .whl file is a newer type of installation file for Python packages. When you
 
 A tar.gz file, ie an sdist, contains the files needed to compile and install a Python package. A whl file, ie. a *built distribution*, only needs to be copied to the proper place for installation. Behind the scenes, pip installing a whl file has fewer steps than a tar.gz file.
 
-# commands to upload to the pypi test repository
+## commands to upload to the pypi test repository
 ```
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 pip install --index-url https://test.pypi.org/simple/ numerical_distributions
 ```
 
-# command to upload to the pypi repository
+## command to upload to the pypi repository
 ```
 twine upload dist/*
 pip install numerical_distributions
 ```
+
+# Tests
+
+When you're ready to test out your code, you'll want to pip install your numerical_distributions package and then run the unit tests. In the terminal, type `pip install .` into the command line. Then run the unit tests by typing `python -m unittest test`. 
+
+Note that if you change the code in the numerical_distributions folder after pip installing the package, Python will not know about the changes. You'll need to run `pip install --upgrade .` when you make changes to the package files.
