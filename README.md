@@ -11,17 +11,22 @@ The .whl file is a newer type of installation file for Python packages. When you
 
 A tar.gz file, ie an sdist, contains the files needed to compile and install a Python package. A whl file, ie. a *built distribution*, only needs to be copied to the proper place for installation. Behind the scenes, pip installing a whl file has fewer steps than a tar.gz file.
 
-## commands to upload to the pypi test repository
+## Commands to upload to the pypi test repository
 ```
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 pip install --index-url https://test.pypi.org/simple/ numerical_distributions
 ```
 
-## command to upload to the pypi repository
+## Commands to upload to the pypi repository
 ```
 twine upload dist/*
 pip install numerical_distributions
 ```
+
+## PyPi vs. Test PyPi
+Note that pypi.org and test.pypi.org are two different websites. You'll need to register separately at each website. If you only register at pypi.org, you will not be able to upload to the test.pypi.org repository.
+
+Also, remember that your package name must be unique. If you use a package name that is already taken, you will get an error when trying to upload the package.
 
 # Tests
 
